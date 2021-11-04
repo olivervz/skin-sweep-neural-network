@@ -1,0 +1,6 @@
+/env
+/model
+/data/train
+/data/test
+/data/dataset
+__pycache__/

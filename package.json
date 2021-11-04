@@ -1,0 +1,14 @@
+{
+    "name": "skin-sweep-nn",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "load": "python3 main/load.py",
+        "train": "python3 main/train.py",
+        "test": "python3 main/test.py"
+    },
+    "author": "",
+    "license": "ISC"
+}
