@@ -36,22 +36,9 @@ shorthand = {
     'mel':'Melanoma'
 }
 
-
-def fix_serialize(json_model_str):
-    json_model = json.loads(json_model_str)
-
-    for layer in json_model["config"]["layers"]:
-        if "activation" in layer["config"].keys():
-            if layer["config"]["activation"] == "softmax_v2":
-                layer["config"]["activation"] = "softmax"
-
-    return json.dumps(json_model)
-
 def load_model():
     with open("model/modelfin.json", 'r') as json_file:
         json_model = json_file.read()
-
-        # json_model = fix_serialize(json_model)
 
         model = model_from_json(json_model)
 
@@ -73,7 +60,7 @@ def displayImage(img, guess, confidence, actual):
 def formatImage(model, path):
     img = Image.open(path, 'r')
     resized_image = img.resize((28, 28))
-    # resized_image.save('main/resized_image.jpg')
+
     imgarray = np.array(resized_image)
     imgarray = np.array(resized_image) / 255
     imgarray = imgarray.reshape(-1, img_size, img_size, 3)

@@ -1,21 +1,19 @@
 import numpy as np
-import keras
-from keras.callbacks import EarlyStopping
+# import keras
 from keras.models import Sequential
-from keras.layers import Dense, Conv2D, MaxPool2D, Flatten, Dropout, BatchNormalization, MaxPooling2D, Input, Activation
+from keras.layers import Dense, Conv2D, Flatten, Dropout, MaxPooling2D
 
-import numpy as np 
-import pandas as pd 
+# import numpy as np 
 
-from sklearn.model_selection import train_test_split
-from imblearn.over_sampling import RandomOverSampler
+# from sklearn.model_selection import train_test_split
+# from imblearn.over_sampling import RandomOverSampler
 
 # import tensorflow as tf
-from keras.models import Sequential
-from keras.layers import Input, Conv2D, MaxPooling2D
-from keras.layers import Activation, Dropout, Flatten, Dense, BatchNormalization
-from keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
-from keras.preprocessing.image import ImageDataGenerator
+# from keras.models import Sequential
+# from keras.layers import Conv2D, MaxPooling2D
+# from keras.layers import Dropout, Flatten, Dense, BatchNormalization
+# from keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
+# from keras.preprocessing.image import ImageDataGenerator
 
 import os
 
@@ -72,7 +70,7 @@ def main():
 
     model.summary()
 
-    model.fit(x_train, y_train, epochs=20,
+    model.fit(x_train, y_train, epochs=1,
             validation_data=(x_test, y_test))
 
     print("Model Loss: ", model.evaluate(x_test, y_test))
@@ -80,7 +78,7 @@ def main():
           model.evaluate(x_test, y_test))
 
     # Save model
-    save_model(model, "modelfin")
+    save_model(model, "modelasdf")
 
 if __name__ == '__main__':
     main()
