@@ -20,7 +20,7 @@ deactivate
 npm run load
 ```
 
-# HOW TO TRAIN MODEl
+# HOW TO TRAIN MODEL
 
 ```
 npm run train
