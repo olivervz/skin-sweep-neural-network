@@ -12,6 +12,7 @@ def main():
 
     label = dataset["label"]
     image_data = dataset.drop(columns=["label"])
+    print(image_data, label)
     x_train , x_test , y_train , y_test = \
         train_test_split(image_data, label , test_size = 0.2)
 

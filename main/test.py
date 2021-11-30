@@ -1,12 +1,11 @@
 import json
 import random
-import tensorflow as tf
+import tensorflow
 import numpy as np
 import matplotlib.pyplot as plt
-from tensorflow import keras
-from keras.models import Sequential, model_from_json, load_model
+from tensorflow.keras.models import Sequential, model_from_json, load_model
 # from train import load_datasets, normalize_data, reshape_data
-from mlxtend.plotting import plot_confusion_matrix
+# from mlxtend.plotting import plot_confusion_matrix
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
 
@@ -75,6 +74,20 @@ def main():
     # Test using known inputs
     predictions = model.predict(x_test)
     print(np.argmax(y_test, axis=1),predictions)
+
+    x_val = np.load(path + 'x_val.npy')
+    y_val = np.load(path + 'y_val.npy')
+
+    # Normalize validation data
+    x_val = x_val / 255
+
+    # Reshape validation data
+    x_val = x_val.reshape(-1, img_size, img_size, 3)
+    y_val = np.array(y_val)
+
+    # Test using known inputs
+    predictions = model.predict(x_val)
+    print(np.argmax(y_val, axis=1),predictions)
 
 if __name__ == '__main__':
     main()

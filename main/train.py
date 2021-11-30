@@ -72,7 +72,7 @@ def main():
 
     model.summary()
 
-    model.fit(x_train, y_train, epochs=2,
+    model.fit(x_train, y_train, epochs=20,
             validation_data=(x_test, y_test))
 
     print("Model Loss: ", model.evaluate(x_test, y_test))
@@ -80,7 +80,7 @@ def main():
           model.evaluate(x_test, y_test))
 
     # Save model
-    save_model(model, "model3")
+    save_model(model, "modelfin")
 
 if __name__ == '__main__':
     main()

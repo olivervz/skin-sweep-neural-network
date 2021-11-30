@@ -7,7 +7,8 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "load": "python3 main/load.py",
         "train": "python3 main/train.py",
-        "test": "python3 main/test.py"
+        "test": "python3 main/test.py",
+        "validation": "python3 main/validation.py"
     },
     "author": "",
     "license": "ISC"
